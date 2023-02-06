@@ -1,8 +1,23 @@
-import React from 'react'
-import SearchCSS from './Search.module.css'
+import React, { useState } from 'react';
 
-export default function Search() {
+const Search = ({  handleClick }) => {
+  const [searchTerm, setSearchTerm] = useState('World');
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
-    <div className={SearchCSS.input}>Search</div>
-  )
-}
+    <div className="search">
+      <input
+        type="text"
+        placeholder="Search for news"
+        value={searchTerm}
+        onChange={handleChange}
+      />
+      <button onClick={() => handleClick(searchTerm)}>Search</button>
+    </div>
+  );
+};
+
+export default Search;

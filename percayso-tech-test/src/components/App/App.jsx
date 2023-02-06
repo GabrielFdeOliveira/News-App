@@ -1,32 +1,42 @@
-import { useState, useEffect } from 'react'
-import Card from '../Card/Card'
-import Search from '../Search/Search'
-import AppCSS from './App.module.css'
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Search from '../Search/Search';
+import Card from '../Card/Card';
 
-function App() {
-  const [articles, setArticles] = useState([]);
+const App = () => {
+  const [news, setNews] = useState([]);
+  const [query, setQuery] = useState('');
+
+  const handleClick = async (searchTerm) => {
+    setQuery(searchTerm);
+  };
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       const result = await axios.get(
-        'https://gnews.io/api/v3/search?q=technology&token=3b72fd7da7be1b12071d51d6ef17d853'
+        `https://gnews.io/api/v4/search?q=${query}&token=3b72fd7da7be1b12071d51d6ef17d853`
       );
-      setArticles(result.data.articles);
-    }
+      setNews(result.data.articles);
+    };
     fetchData();
-  }, []);
+  }, [query]);
 
   return (
-    <div>
-      {articles.map((article) => (
-        <div key={article.title}>
-          <h3>{article.title}</h3>
-          <p>{article.description}</p>
-        </div>
-      ))}
+    <div className="container">
+      <Search  handleClick={handleClick} />
+      <div className="cards">
+        {news.map((article, index) => (
+          <Card
+            key={index}
+            title={article.title}
+            description={article.description}
+            image={article.image}
+            link={article.url}
+          />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
