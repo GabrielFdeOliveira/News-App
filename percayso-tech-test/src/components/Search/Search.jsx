@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SearchStyle from './Search.module.css'
 
 const Search = ({  handleClick }) => {
   const [searchTerm, setSearchTerm] = useState('World');
@@ -8,8 +9,8 @@ const Search = ({  handleClick }) => {
   };
 
   return (
-    <div className="search">
-      <input
+    <div className={SearchStyle.container}>
+      <input className={SearchStyle.input}
         type="text"
         placeholder="Search for news"
         value={searchTerm}

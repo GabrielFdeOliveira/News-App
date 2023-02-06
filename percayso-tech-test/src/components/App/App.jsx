@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Search from '../Search/Search';
 import Card from '../Card/Card';
+import AppStyle from './App.module.css';
 
 const App = () => {
   const [news, setNews] = useState([]);
@@ -22,19 +23,10 @@ const App = () => {
   }, [query]);
 
   return (
-    <div className="container">
-      <Search  handleClick={handleClick} />
-      <div className="cards">
-        {news.map((article, index) => (
-          <Card
-            key={index}
-            title={article.title}
-            description={article.description}
-            image={article.image}
-            link={article.url}
-          />
-        ))}
-      </div>
+    <div className={AppStyle.container}>
+      <h1>GNews API tech test</h1>
+      <Search  handleClick={handleClick} />        
+      <Card news={news}/>        
     </div>
   );
 };
