@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import SearchStyle from './Search.module.css'
 
-const Search = ({  handleClick }) => {
-  const [searchTerm, setSearchTerm] = useState('World');
+function Search({ handleClick }) {
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleChange = (e) => {
+  function handleChange(e) {
     setSearchTerm(e.target.value);
   };
 
@@ -16,7 +16,7 @@ const Search = ({  handleClick }) => {
         value={searchTerm}
         onChange={handleChange}
       />
-      <button onClick={() => handleClick(searchTerm)}>Search</button>
+      <button onClick={() => handleClick(searchTerm)} >Search</button>
     </div>
   );
 };

@@ -1,12 +1,15 @@
+/* I have tried to space the content inside the cards but couldn't figure how to, tried to use the justify-content property in the article, container
+and also tried to wrap the article tag in a div and  apply the space but nothing worked.  */
 article {
 padding: 15px;
 margin: 10px;
 width: 350px;
 min-height: 500px;
 max-height: 650px;
-background-color: #1a4147;
+background-color: #27626b;
 text-align: center;
 border-radius: 1em;
+justify-content: space-around;
 }
 
 img {
@@ -16,16 +19,24 @@ img {
 
 p {
   text-align: justify;
+  color: antiquewhite;
 }
 
 h2 {
   font-size: 20px;
   text-align: left;
+  color: aliceblue;
 }
 
 .link {
   text-align: center;
-  color: #81ca81;
+  color:#27626b;
+  border: solid;
+  border-radius: 10px;
+  border-color: #27626b;
+  background-color: antiquewhite;
+  padding: 5px;
+  text-decoration: none;
 }
 
 .container {

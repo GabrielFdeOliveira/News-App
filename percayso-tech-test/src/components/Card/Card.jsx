@@ -7,7 +7,7 @@ function Card({ news }){
   <div className={CardCSS.container}>
     {news.length > 0 &&
       news.map((newsItem, index) => (
-        <article>
+        <article key={index}>
           <img  src={newsItem.image} alt={newsItem.title} />
           <h2 className={CardCSS.h2}>{newsItem.title}</h2>
           <p className={CardCSS.p}>{newsItem.description}</p>

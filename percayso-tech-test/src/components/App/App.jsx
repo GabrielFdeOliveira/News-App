@@ -14,8 +14,9 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const term = query || 'tech'
       const result = await axios.get(
-        `https://gnews.io/api/v4/search?q=${query}&token=3b72fd7da7be1b12071d51d6ef17d853`
+        `https://gnews.io/api/v4/search?q=${term}&token=3b72fd7da7be1b12071d51d6ef17d853&lang=en&country=gb&max=10`
       );
       setNews(result.data.articles);
     };
