@@ -1,10 +1,16 @@
 import React from 'react'
 import CardCSS from './Card.module.css'
 
+/**
+ * 
+ * @param {object} news It cointains the data fetched froom the API 
+ * @returns A card cointainer with the data styled.
+ */
 function Card({ news }){
   console.log(news)
   return (
   <div className={CardCSS.container}>
+    {/* This is a conditional redering, making sure "news" is not undefined and preventing a method error. */}
     {news.length > 0 &&
       news.map((newsItem, index) => (
         <article key={index}>
