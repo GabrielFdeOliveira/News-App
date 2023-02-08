@@ -1,0 +1,18 @@
+First part:
+1- Check the API documentation
+2- Initialize the app
+3- Think about the component tree
+4- Build the file structure
+
+Decided to use Vite over "Create React App" as it is faster to initialize and run.
+I believe I'll need only three components for this application.
+To avoid specificity complicts I'll use css modules from the start.
+
+Second part:
+1- Fetch the API data (Axios).
+2- Store the data in a useState.
+3- Render the data.
+4- Add an input field to search by term.
+5- Style the Card component
+
+
