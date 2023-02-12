@@ -24,7 +24,6 @@ const App = () => {
     setQuery(searchTerm);
     /* Tryed to setQuery('') here to reset the input field but the request is never made */       
   }
-console.log(query)
 
 /* We must utilize useEffect here because we are reatching outsite of our app and this can potetially create side-effects, also when using it we make sure our app only re-renders when necessary, in this case when the query state is updated */
   useEffect(() => {
