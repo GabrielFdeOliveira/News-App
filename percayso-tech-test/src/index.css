@@ -1,3 +1,11 @@
 .app {
-    padding: auto;
+padding: auto;
+}
+body {
+background-image: url("../public/background.jpg");
+background-size: cover;
+background-attachment: fixed;
+/* background-size: contain; */
+background-repeat: no-repeat;
+background-position: center;
 }
